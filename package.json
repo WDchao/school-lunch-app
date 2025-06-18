@@ -1,0 +1,26 @@
+{
+  "name": "school-lunch-app",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://your-github-WDchao.github.io/school-lunch-app",
+  "dependencies": {
+    "firebase": "^...", // 確保這裡有 firebase
+    "react": "^...",
+    // ... 其他依賴
+  },
+  "devDependencies": {
+    "gh-pages": "^...", // 確保這裡有 gh-pages
+    // ... 其他開發依賴
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",  <-- 新增此行
+    "deploy": "gh-pages -d build"  <-- 新增此行
+  },
+  // ... 其他內容
+}
+```predeploy` 腳本會在 `deploy` 前自動執行 `npm run build`，將您的 React 應用程式編譯成靜態檔案。
+`deploy` 腳本則會將這些靜態檔案推送到 GitHub 儲存庫的 `gh-pages` 分支。
